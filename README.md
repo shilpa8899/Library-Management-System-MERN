@@ -72,7 +72,7 @@ This project brings these workflows together in one web application, helping mak
 - **Personalized Book Recommendations:** Recommend books based on supported recommendation logic.
 - **Responsive User Interface:** A React-based interface for interacting with the application.
 
-> Feature availability depends on the implementation and production configuration. Verify individual workflows in the deployed application before describing them as fully operational.
+
 
 ## Technology Stack
 
@@ -163,27 +163,33 @@ Library-Management-System-MERN/
 └── README.md
 ```
 
-> This is a high-level representation. Update the structure if your actual repository differs.
 
 ## Screenshots
 
-### Home Page
+### 1. Home Page
 
-![Online Library Management System Home Page](Library_Frontend/home.png)
+![Library Management System - Home Page](Library_Frontend/images/home.png)
 
-### Book Catalogue and Discovery
+### 2. Books Catalogue
 
-![Book Catalogue](Library_Frontend/images/image-1.png)
+![Library Management System - Books Catalogue](Library_Frontend/images/books.png)
 
-### Book Details
+### 3. User Dashboard
 
-![Book Details](Library_Frontend/images/image-2.png)
+![Library Management System - User Dashboard](Library_Frontend/images/user-dashboard.png)
 
-### Application Interface
+### 4. Admin Dashboard
 
-![Library Management System Interface](Library_Frontend/images/image-3.png)
+![Library Management System - Admin Dashboard](Library_Frontend/images/admin-dashboard.png)
 
-> Ensure the screenshot files exist at these paths in your repository. Update the paths to match the actual filenames if necessary.
+### 5. Notifications Page
+
+![Library Management System - Notifications Page](Library_Frontend/images/notifications.png)
+.
+
+
+
+
 
 ## Live Deployment
 
@@ -282,24 +288,30 @@ Vite generates the production build in the `dist` directory.
 
 Configure environment variables locally and in the relevant hosting dashboards. Use the exact variable names referenced by your code.
 
+
 ### Backend — Render
 
-Depending on the features enabled, the backend may require:
+Configure the environment variables required by your backend in the Render dashboard.
 
 | Variable | Purpose |
 |---|---|
-| `MONGO_URI` | MongoDB connection string |
-| `JWT_SECRET` | JWT signing secret, if used |
-| `GEMINI_API_KEY` | Gemini API access, if enabled |
+| `MONGO_URI` | MongoDB Atlas connection string |
+| `JWT_SECRET` | Secret key used to sign and verify JWTs, if applicable |
+| `GEMINI_API_KEY` | API key for Gemini-powered features, if enabled |
 | `EMBEDDING_MODEL` | Embedding model configuration, if used |
-| `MONGODB_VECTOR_INDEX` | Vector search index name, if used |
-| `SMTP_HOST` | SMTP server hostname, if email is configured |
+| `MONGODB_VECTOR_INDEX` | MongoDB Atlas Vector Search index name, if used |
+| `SMTP_HOST` | SMTP server hostname, if email notifications use SMTP |
 | `SMTP_PORT` | SMTP server port |
 | `SMTP_USER` | SMTP account username |
 | `SMTP_PASS` | SMTP password or app password |
-| `EMAIL_FROM` | Sender address, if configured |
+| `EMAIL_FROM` | Sender email address, if configured |
 
-Only configure variables that are actually required by your backend.
+**Important:**
+- Add only variables that are referenced by your backend code.
+- Use the exact variable names expected by your application.
+- Keep secrets in Render environment settings; never commit them to GitHub.
+- If email notifications or semantic search are not configured in production, their environment variables may not be required.
+
 
 ### Frontend — Vercel
 
