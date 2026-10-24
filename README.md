@@ -1,26 +1,25 @@
-<div align="center">
 
 # Online Library Management System
 
-### A web-based application for book discovery and library workflows
+A full-stack MERN application for book discovery, catalogue management, authentication, borrowing workflows, digital resources, and notifications.
 
-<p>
-  <img src="https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=20232A" alt="React" />
-  <img src="https://img.shields.io/badge/Build-Vite-646CFF?logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Backend-Node.js-339933?logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/API-Express-000000?logo=express&logoColor=white" alt="Express" />
-  <img src="https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?logo=mongodb&logoColor=white" alt="MongoDB Atlas" />
+<p align="center">
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?logo=react&logoColor=20232A" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-Build-646CFF?logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-API-000000?logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white" alt="MongoDB" />
 </p>
 
-**Discover books. Manage library records. Keep library workflows in one place.**
-
-<p>
-  <a href="https://library-frontend-topaz.vercel.app/">Live Application</a> ·
-  <a href="https://github.com/shilpa8899/Library-Frontend">Frontend Source Code</a> ·
-  <a href="https://github.com/shilpa8899/Online-Library-Management-Full-Stack">Backend Source Code</a>
+<p align="center">
+  <strong>Discover books. Manage library records. Simplify library workflows.</strong>
 </p>
 
-</div>
+<p align="center">
+  <a href="https://library-management-system-mern-iota.vercel.app/">Live Application</a> ·
+  <a href="https://github.com/shilpa8899/Library-Management-System-MERN">GitHub Repository</a> ·
+  <a href="https://library-management-backend-wnl2.onrender.com/api">Backend API</a>
+</p>
 
 ---
 
@@ -28,17 +27,18 @@
 
 - [Overview](#overview)
 - [Problem Statement](#problem-statement)
-- [Intended Users](#intended-users)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [System Architecture](#system-architecture)
-- [API Route Groups](#api-route-groups)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Live Deployment](#live-deployment)
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
-- [Screenshots](#screenshots)
-- [Testing Checklist](#testing-checklist)
+- [API Route Groups](#api-route-groups)
+- [Deployment Configuration](#deployment-configuration)
 - [Security](#security)
+- [Testing Checklist](#testing-checklist)
 - [Known Limitations](#known-limitations)
 - [Future Improvements](#future-improvements)
 - [Author](#author)
@@ -47,160 +47,179 @@
 
 ## Overview
 
-The **Online Library Management System** is a full-stack web application designed to bring book-catalogue access and supported library-management workflows into one browser-based experience.
+The **Online Library Management System** is a full-stack web application built using the MERN stack. It provides a browser-based interface for discovering books and accessing supported library-management workflows.
 
-The frontend is developed using React and Vite. It communicates with a Node.js and Express backend through HTTP API requests. MongoDB Atlas is used for persistent data storage, with Mongoose supporting database operations.
+The frontend uses React and Vite. It communicates with a Node.js and Express backend through HTTP API requests. MongoDB Atlas provides persistent data storage, with Mongoose supporting database operations.
 
-The frontend and backend are maintained in separate GitHub repositories and deployed independently.
-
-### Project Links
-
-| Component | Link |
-|---|---|
-| Live Application | [Open Application](https://library-frontend-topaz.vercel.app/) |
-| Frontend Repository | [Library-Frontend](https://github.com/shilpa8899/Library-Frontend) |
-| Backend Repository | [Online-Library-Management-Full-Stack](https://github.com/shilpa8899/Online-Library-Management-Full-Stack) |
-| Backend Deployment | [Render API](https://online-library-management-full-stack.onrender.com) |
+The frontend and backend are maintained in a single GitHub repository and deployed independently using Vercel and Render.
 
 ## Problem Statement
 
-Library members need a convenient way to discover books and access available library services. Library staff also need ways to maintain book records and manage supported library operations.
+Library members need a convenient way to discover books and access available library services. Library staff also need tools to maintain book records and manage supported library operations.
 
-When these activities rely on disconnected or manual processes, maintaining consistent and accessible information can become difficult.
-
-This project aims to provide a centralized web application for the library workflows implemented in the application.
-
-## Intended Users
-
-### Library Members
-- Browse available books.
-- Search the catalogue.
-- Access supported borrowing and account workflows.
-
-### Library Administrators
-- Manage book records and other administrative data where implemented.
-- Access administrative workflows permitted by their role.
-
-The availability of individual features and permissions should be confirmed against the deployed application.
+This project brings these workflows together in one web application, helping make catalogue access and library operations easier to manage.
 
 ## Features
 
-The backend contains API route groups for authentication, users, books, borrowings, digital resources, and notifications.
+- **User Authentication:** Registration and login workflows.
+- **Book Catalogue:** Browse and search book records.
+- **User Management:** User-related operations.
+- **Borrowing Management:** Borrowing-related workflows.
+- **Digital Resources:** Digital resource functionality.
+- **Notifications:** Notification-related functionality.
+- **Role-Based Access Control:** Middleware for protecting authorized operations.
+- **Semantic Book Discovery:** Discover books using semantic search, where configured.
+- **Personalized Book Recommendations:** Recommend books based on supported recommendation logic.
+- **Responsive User Interface:** A React-based interface for interacting with the application.
 
-| Feature Area | Description |
-|---|---|
-| Authentication | Registration and login API routes |
-| User Management | User-related API operations |
-| Book Catalogue | Book-related API operations |
-| Borrowing Management | Borrowing-related API operations |
-| Digital Resources | API route group for digital resources |
-| Notifications | Notification-related API routes |
-| Semantic Book Discovery | Gemini embeddings and MongoDB Atlas Vector Search were configured during development; verify the complete live workflow before claiming it as fully operational |
-
-**Note:** The presence of a backend route does not, by itself, establish that its complete frontend workflow works in production.
+> Feature availability depends on the implementation and production configuration. Verify individual workflows in the deployed application before describing them as fully operational.
 
 ## Technology Stack
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| Frontend | React.js | User interface |
-| Frontend Tooling | Vite | Development and production builds |
-| HTTP Client | Axios | Frontend API requests |
-| Backend Runtime | Node.js | Server-side JavaScript |
-| Backend Framework | Express.js | API routes and middleware |
-| Database | MongoDB Atlas | Persistent data storage |
-| ODM | Mongoose | Database models and queries |
-| AI Integration | Gemini API | AI-related functionality, where enabled |
-| Semantic Search | MongoDB Atlas Vector Search | Vector-based discovery, where enabled |
-| Backend Hosting | Render | Backend deployment |
-| Frontend Hosting | Vercel | Frontend deployment |
+| Layer | Technologies |
+|---|---|
+| Frontend | React.js, JavaScript, CSS |
+| Frontend Tooling | Vite |
+| API Client | Axios |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas |
+| ODM | Mongoose |
+| Authentication | JWT, where configured |
+| Semantic Search | Embeddings and MongoDB Atlas Vector Search, where configured |
+| Frontend Hosting | Vercel |
+| Backend Hosting | Render |
+| Version Control | Git and GitHub |
 
 ## System Architecture
 
-```mermaid
-flowchart TD
-    U[User / Browser]
-    FE[React + Vite Frontend]
-    AX[Axios API Client]
-    API[Node.js + Express Backend]
-    DB[(MongoDB Atlas)]
-    AI[Gemini Embeddings]
-    VS[MongoDB Atlas Vector Search]
-    MAIL[Email Integration]
-
-    U --> FE
-    FE --> AX
-    AX -->|HTTPS API Requests| API
-    API -->|Database Operations| DB
-    API -. AI functionality .-> AI
-    AI -. Embeddings and discovery .-> VS
-    API -. Email integration .-> MAIL
+```text
+                    User / Browser
+                          |
+                          v
+                  React + Vite Frontend
+                        (Vercel)
+                          |
+                          v
+                     Axios Client
+                          |
+                          v
+                    HTTPS API Calls
+                          |
+                          v
+                  Node.js + Express API
+                        (Render)
+                          |
+                          v
+                       Mongoose
+                          |
+                          v
+                     MongoDB Atlas
 ```
 
 ### Request Flow
 
-1. A user interacts with the frontend.
-2. The Axios client sends requests to the configured backend API.
-3. Express routes the requests to the appropriate handlers.
-4. The backend performs required database operations through Mongoose.
+1. The user interacts with the frontend.
+2. Axios sends HTTP requests to the configured backend API.
+3. Express routes requests to the appropriate handlers.
+4. The backend performs business logic and database operations.
 5. The backend returns responses to the frontend.
-6. The frontend displays the resulting data or an appropriate error state.
+6. The frontend displays the resulting data or appropriate error messages.
 
-The diagram represents the high-level design. Actual behavior depends on the implementation and deployment configuration.
+## Project Structure
 
-## API Route Groups
+```text
+Library-Management-System-MERN/
+│
+├── Library_Backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── jobs/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── scripts/
+│   ├── services/
+│   ├── utils/
+│   ├── package.json
+│   └── server.js
+│
+├── Library_Frontend/
+│   ├── public/
+│   ├── images/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
+│
+├── .gitignore
+└── README.md
+```
 
-The backend mounts the following route groups:
+> This is a high-level representation. Update the structure if your actual repository differs.
 
-| API Prefix | Purpose |
+## Screenshots
+
+### Home Page
+
+![Online Library Management System Home Page](Library_Frontend/home.png)
+
+### Book Catalogue and Discovery
+
+![Book Catalogue](Library_Frontend/images/image-1.png)
+
+### Book Details
+
+![Book Details](Library_Frontend/images/image-2.png)
+
+### Application Interface
+
+![Library Management System Interface](Library_Frontend/images/image-3.png)
+
+> Ensure the screenshot files exist at these paths in your repository. Update the paths to match the actual filenames if necessary.
+
+## Live Deployment
+
+| Component | Link |
 |---|---|
-| `/api/auth` | Authentication |
-| `/api/users` | User operations |
-| `/api/books` | Book operations |
-| `/api/borrowings` | Borrowing operations |
-| `/api/digital-resources` | Digital resource operations |
-| `/api/notifications` | Notification operations |
+| Live Application | [Open Frontend](https://library-management-system-mern-iota.vercel.app/) |
+| Backend API Base URL | [Open Backend API](https://library-management-backend-wnl2.onrender.com/api) |
+| GitHub Repository | [View Source Code](https://github.com/shilpa8899/Library-Management-System-MERN) |
 
-The exact HTTP methods, request bodies, response formats, and authorization rules are defined by the backend routes, controllers, and middleware.
-
-**Backend Base URL**
-
-`https://online-library-management-full-stack.onrender.com`
-
-**Production API Base URL**
-
-`https://online-library-management-full-stack.onrender.com/api`
+The frontend is hosted on Vercel, and the backend is hosted on Render.
 
 ## Getting Started
 
 ### Prerequisites
 
-Install the following tools:
+Install the following:
 
-- Node.js
+- [Node.js](https://nodejs.org/)
 - npm
-- Git
-- MongoDB Atlas account or another supported MongoDB instance
-- Required API credentials for features that depend on external services
+- [Git](https://git-scm.com/)
+- A MongoDB Atlas account or another supported MongoDB instance
+- Credentials for external services required by the application
 
-### 1. Clone Both Repositories
-
-Open a terminal and run:
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/shilpa8899/Library-Frontend.git
-
-git clone https://github.com/shilpa8899/Online-Library-Management-Full-Stack.git
+git clone https://github.com/shilpa8899/Library-Management-System-MERN.git
+cd Library-Management-System-MERN
 ```
 
-This creates two separate project directories.
-
-### 2. Configure the Backend
+### 2. Set Up the Backend
 
 Navigate to the backend directory:
 
 ```bash
-cd Online-Library-Management-Full-Stack
+cd Library_Backend
 ```
 
 Install dependencies:
@@ -209,22 +228,22 @@ Install dependencies:
 npm install
 ```
 
-Create a local `.env` file in the backend directory and configure the required backend environment variables using your own credentials.
+Create a `.env` file inside `Library_Backend` and configure the environment variables required by the backend.
 
-Start the backend:
+Start the backend using the script configured in `package.json`:
 
 ```bash
 npm start
 ```
 
-The backend package configuration uses `node server.js` as its start command.
+If the `start` script is not available, check the scripts in `package.json` and use the appropriate server entry point.
 
-### 3. Configure the Frontend
+### 3. Set Up the Frontend
 
-Open a **second terminal** and navigate to the frontend directory:
+Open a second terminal and navigate to the frontend directory from the repository root:
 
 ```bash
-cd Library-Frontend
+cd Library_Frontend
 ```
 
 Install dependencies:
@@ -233,13 +252,13 @@ Install dependencies:
 npm install
 ```
 
-Create a local `.env` file in the frontend directory containing:
+Create a `.env` file inside `Library_Frontend`:
 
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
 ```
 
-Use the actual local backend port configured by your project if it differs from `5000`.
+Replace port `5000` with the actual local backend port if it differs.
 
 Start the frontend development server:
 
@@ -247,172 +266,153 @@ Start the frontend development server:
 npm run dev
 ```
 
-Open the local URL printed in the terminal.
+Open the local URL displayed in the terminal.
 
 ### 4. Build the Frontend
 
-To check whether the frontend production build succeeds, run:
+From `Library_Frontend`, run:
 
 ```bash
 npm run build
 ```
 
-Run this command from the frontend directory. Confirm the available scripts in the frontend `package.json` if a command is not recognized.
+Vite generates the production build in the `dist` directory.
 
 ## Environment Variables
 
-Configure environment variables in local `.env` files and the relevant hosting dashboards. Do not commit secrets to GitHub.
+Configure environment variables locally and in the relevant hosting dashboards. Use the exact variable names referenced by your code.
 
-### Backend Variables
+### Backend — Render
 
-The following variable names were used during project setup. Confirm which are required by the current backend code.
+Depending on the features enabled, the backend may require:
 
 | Variable | Purpose |
 |---|---|
 | `MONGO_URI` | MongoDB connection string |
-| `JWT_SECRET` | JWT signing or verification secret, if used |
-| `GEMINI_API_KEY` | Gemini API access |
+| `JWT_SECRET` | JWT signing secret, if used |
+| `GEMINI_API_KEY` | Gemini API access, if enabled |
 | `EMBEDDING_MODEL` | Embedding model configuration, if used |
-| `MONGODB_VECTOR_INDEX` | MongoDB Atlas Vector Search index name, if used |
-| `SMTP_HOST` | SMTP server hostname |
+| `MONGODB_VECTOR_INDEX` | Vector search index name, if used |
+| `SMTP_HOST` | SMTP server hostname, if email is configured |
 | `SMTP_PORT` | SMTP server port |
-| `SMTP_SECURE` | SMTP TLS configuration |
 | `SMTP_USER` | SMTP account username |
 | `SMTP_PASS` | SMTP password or app password |
-| `EMAIL_FROM` | Sender address or configuration |
+| `EMAIL_FROM` | Sender address, if configured |
 
-Previously configured values included `smtp.gmail.com`, port `587`, `SMTP_SECURE=false`, `gemini-embedding-2`, and `book_embedding_index`. Verify these against the current code and hosting configuration.
+Only configure variables that are actually required by your backend.
 
-### Frontend Variables
+### Frontend — Vercel
 
-For local development:
-
-```env
-VITE_API_BASE_URL=http://localhost:5000/api
-```
-
-For the deployed application:
+If the frontend reads `import.meta.env.VITE_API_BASE_URL`, configure:
 
 ```env
-VITE_API_BASE_URL=https://online-library-management-full-stack.onrender.com/api
+VITE_API_BASE_URL=https://library-management-backend-wnl2.onrender.com/api
 ```
 
-Vite embeds `VITE_` variables into the client bundle during the build. Never put database credentials, JWT secrets, SMTP passwords, or private API keys in frontend environment variables.
+This directs frontend API requests to the deployed backend.
 
-After changing frontend environment variables in Vercel, trigger a new deployment.
+After changing environment variables in Vercel, redeploy the frontend for the updated values to take effect.
 
-## Deployment
+**Security note:** Variables prefixed with `VITE_` are exposed to client-side code. Never place database credentials, JWT secrets, SMTP passwords, or other private secrets in frontend environment variables.
 
-### Backend Deployment — Render
+## API Route Groups
 
-The backend is deployed at:
+The backend contains the following route groups:
 
-[https://online-library-management-full-stack.onrender.com](https://online-library-management-full-stack.onrender.com)
-
-The deployment configuration used during setup was:
-
-| Setting | Value |
+| API Prefix | Purpose |
 |---|---|
-| Build Command | `npm install` |
-| Start Command | `npm start` |
-| Start Script | `node server.js` |
-| Database | MongoDB Atlas |
+| `/api/auth` | Authentication |
+| `/api/users` | User operations |
+| `/api/books` | Book catalogue operations |
+| `/api/borrowings` | Borrowing operations |
+| `/api/digital-resources` | Digital resource operations |
+| `/api/notifications` | Notification operations |
 
-Keep the required backend environment variables configured in Render.
+The supported HTTP methods, request formats, response structures, and authorization requirements are defined by the backend implementation.
 
-The backend root URL may return a 404 if no `/` route is defined. Test an actual API endpoint when checking backend availability.
+## Deployment Configuration
 
-### Frontend Deployment — Vercel
+### Backend — Render
 
-The frontend deployment is available at:
+- **Repository:** `Library-Management-System-MERN`
+- **Root Directory:** `Library_Backend`
+- **Build Command:** `npm install`
+- **Start Command:** Use the start script configured in `Library_Backend/package.json`.
+- **Environment Variables:** Configure the database connection, authentication secrets, and any required external service credentials.
 
-[https://library-frontend-topaz.vercel.app/](https://library-frontend-topaz.vercel.app/)
+### Frontend — Vercel
 
-For deployment:
+- **Repository:** `Library-Management-System-MERN`
+- **Root Directory:** `Library_Frontend`
+- **Framework Preset:** Vite
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Environment Variable:** `VITE_API_BASE_URL=https://library-management-backend-wnl2.onrender.com/api`, if used by your frontend code.
 
-1. Import the frontend GitHub repository into Vercel.
-2. Confirm the project root points to the directory containing the frontend `package.json`.
-3. Confirm the Vite build settings.
-4. Add `VITE_API_BASE_URL` with the deployed backend API base URL.
-5. Deploy the frontend.
-6. Test the deployed application and its API requests.
-7. Redeploy after changing build-time environment variables.
+### CORS Configuration
 
-### Hosting Considerations
+The backend must allow requests from the deployed frontend origin:
 
-- Free-tier backend services may have cold starts after periods of inactivity.
-- The Gmail SMTP integration previously produced a connection timeout in the Render environment.
-- Email delivery should not be described as working until it has been tested successfully in production.
-- An HTTPS-based email API or a hosting configuration that supports the required outbound connections may be needed to restore email delivery.
+```text
+https://library-management-system-mern-iota.vercel.app
+```
 
-## Screenshots
-
-### Home Page
-
-<p align="center">
-  <img src="home.png" alt="Online Library Management System Home Page" width="90%">
-</p>
-
-
-
-## Testing Checklist
-
-Test the live application before marking a workflow as complete.
-
-- [ ] Frontend loads successfully.
-- [ ] Frontend API requests reach the deployed backend.
-- [ ] Login and registration work as expected.
-- [ ] Book catalogue and search work as expected.
-- [ ] Borrowing and returning workflows work, if implemented.
-- [ ] Administrative actions enforce authorization.
-- [ ] Data remains consistent after refreshing the page.
-- [ ] API failures are handled without crashing the frontend.
-- [ ] Semantic discovery works end to end, if enabled.
-- [ ] Email delivery succeeds, if the email feature is presented as operational.
-- [ ] No credentials or secret files are committed to either repository.
-
-Record actual test results rather than assuming that a feature works because a route exists.
+Configure CORS to allow the origin expected by your application. Avoid unrestricted origins in production unless specifically required.
 
 ## Security
 
-- Never commit `.env` files or credentials.
-- Keep database URIs, JWT secrets, Gemini API keys, and SMTP passwords in secure environment settings.
-- Ensure `.env` is included in `.gitignore`.
-- Rotate any credential that was accidentally exposed.
+- Never commit `.env` files, database credentials, passwords, or API secrets.
+- Keep environment files excluded through `.gitignore`.
 - Validate user input on the backend.
-- Enforce authorization in backend routes and controllers.
-- Do not rely on frontend visibility alone to protect administrative operations.
-- Avoid exposing private user information in screenshots, logs, or demo recordings.
-- Review authentication, token storage, CORS configuration, and error handling before production use.
+- Enforce authorization on protected API routes.
+- Do not rely solely on frontend restrictions for access control.
+- Store credentials in the appropriate hosting environment settings.
+- Rotate any credential that is accidentally exposed.
+- Review CORS configuration, token handling, and error responses before production use.
+
+## Testing Checklist
+
+Verify the deployed application before marking a workflow as complete.
+
+- [ ] Frontend loads successfully.
+- [ ] Frontend requests reach the deployed backend.
+- [ ] Registration and login work correctly.
+- [ ] Book catalogue and search work correctly.
+- [ ] Borrowing and returning workflows work as expected.
+- [ ] Protected routes enforce authorization.
+- [ ] Data persists after refreshing the application.
+- [ ] API failures are handled correctly.
+- [ ] Semantic book discovery works end to end.
+- [ ] Personalized book recommendations work as expected.
+- [ ] Email notifications work end to end, if configured.
+- [ ] No credentials or secret files are committed to GitHub.
 
 ## Known Limitations
 
-1. **Email delivery:** The production SMTP integration previously returned a connection timeout. Email delivery requires a successful end-to-end test after the integration is corrected.
-2. **Feature verification:** Each complete user-facing workflow must be tested before it is claimed as fully functional.
-3. **Hosting behavior:** Free-tier hosting may introduce cold starts or provider-specific restrictions.
-4. **Testing evidence:** The testing checklist is a plan until each item has been executed and its result recorded.
+- Free-tier hosting may introduce cold starts or provider-specific restrictions.
+- External integrations depend on valid credentials and service availability.
+- Email delivery should be considered operational only after successful end-to-end testing.
+- Individual features should be verified in the deployed environment before being described as fully functional.
 
 ## Future Improvements
 
-Potential improvements, depending on the current implementation:
-
-- Add automated unit and integration tests.
-- Improve input validation and authorization.
-- Improve responsive design and accessibility.
-- Add structured logging and error monitoring.
-- Repair email delivery and test notifications end to end.
-- Improve catalogue discovery and semantic recommendations.
-- Add clear loading, empty, and error states.
+- **Automated Testing:** Add unit and integration tests for authentication, catalogue management, and borrowing workflows.
+- **Performance Optimization:** Optimize database queries, API response times, and frontend loading performance.
+- **Monitoring and Logging:** Introduce structured logging and error monitoring to simplify debugging and maintenance.
+- **Reliable Email Notifications:** Improve production email delivery and verify borrowing confirmations, due-date reminders, and return notifications, if these workflows still need improvement.
+- **Enhanced Accessibility:** Improve keyboard navigation, accessibility, and responsive layouts where needed.
 
 ## Author
 
-**Author:** Shilpa Palli  
-**GitHub:** [shilpa8899](https://github.com/shilpa8899)  
-**Frontend Repository:** [Library-Frontend](https://github.com/shilpa8899/Library-Frontend)  
-**Backend Repository:** [Online-Library-Management-Full-Stack](https://github.com/shilpa8899/Online-Library-Management-Full-Stack)
+**Shilpa Palli**
+
+- **GitHub Profile:** [shilpa8899](https://github.com/shilpa8899)
+- **Project Repository:** [Library-Management-System-MERN](https://github.com/shilpa8899/Library-Management-System-MERN)
+- **Live Application:** [Online Library Management System](https://library-management-system-mern-iota.vercel.app/)
+- **Backend API:** [Render Backend](https://library-management-backend-wnl2.onrender.com/api)
 
 ---
 
 <p align="center">
-  <strong>Online Library Management System</strong><br>
-  Built with React, Node.js, Express
+  Built with React, Node.js, Express, and MongoDB.
+</p>
